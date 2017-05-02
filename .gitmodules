@@ -1,0 +1,3 @@
+[submodule "dev/wsdl2phpgenerator-cli"]
+	path = dev/wsdl2phpgenerator-cli
+	url = git@github.com:klein0r/wsdl2phpgenerator-cli.git
