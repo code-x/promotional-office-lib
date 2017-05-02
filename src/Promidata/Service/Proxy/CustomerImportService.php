@@ -1,4 +1,4 @@
-gi<?php
+<?php
 
 /**
  * Proxy for Promidata PromotionalOffice CustomerImportService/CustomerImportService.
