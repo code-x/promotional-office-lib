@@ -3,6 +3,10 @@
 class ProductConfigurationItem
 {
     /**
+     * @var boolean $AddAsInlineCost
+     */
+    public $AddAsInlineCost = null;
+    /**
      * @var int $CombinationNumber
      */
     public $CombinationNumber = null;
@@ -10,6 +14,10 @@ class ProductConfigurationItem
      * @var string $CombinationType
      */
     public $CombinationType = null;
+    /**
+     * @var ProductConfigurationColorItem[] $LinkedColorRestrictions
+     */
+    public $LinkedColorRestrictions = null;
     /**
      * @var string $LinkedOwnArticleNumber
      */
@@ -22,6 +30,10 @@ class ProductConfigurationItem
      * @var string $LinkedPurchaseOrderNumber
      */
     public $LinkedPurchaseOrderNumber = null;
+    /**
+     * @var ProductConfigurationSizeItem[] $LinkedSizeRestrictions
+     */
+    public $LinkedSizeRestrictions = null;
     /**
      * @var string $MainColorKey
      */
@@ -59,6 +71,18 @@ class ProductConfigurationItem
      */
     public $ResultRoundDigits = null;
     /**
+     * @var boolean $SetPrintPositionOnlyPriceToOnInsert
+     */
+    public $SetPrintPositionOnlyPriceToOnInsert = null;
+    /**
+     * @var boolean $SetPrintPositionToOnInsert
+     */
+    public $SetPrintPositionToOnInsert = null;
+    /**
+     * @var boolean $SetPrintPriceSummaryToOnInsert
+     */
+    public $SetPrintPriceSummaryToOnInsert = null;
+    /**
      * @var int $SortNumber
      */
     public $SortNumber = null;
@@ -72,6 +96,7 @@ class ProductConfigurationItem
     public $UseSizesFromArticleCombination = null;
 
     /**
+     * @param boolean $AddAsInlineCost
      * @param guid $LinkedProductIdentifier
      * @param float $QuantityDenominator
      * @param float $QuantityNumerator
@@ -79,8 +104,9 @@ class ProductConfigurationItem
      * @param int $ResultRoundDigits
      * @param int $SortNumber
      */
-    public function __construct($LinkedProductIdentifier, $QuantityDenominator, $QuantityNumerator, $RestrictedToColorSizeCombination, $ResultRoundDigits, $SortNumber)
+    public function __construct($AddAsInlineCost, $LinkedProductIdentifier, $QuantityDenominator, $QuantityNumerator, $RestrictedToColorSizeCombination, $ResultRoundDigits, $SortNumber)
     {
+        $this->AddAsInlineCost = $AddAsInlineCost;
         $this->LinkedProductIdentifier = $LinkedProductIdentifier;
         $this->QuantityDenominator = $QuantityDenominator;
         $this->QuantityNumerator = $QuantityNumerator;

@@ -69,6 +69,10 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
         'TenderIndentImporterRelayData' => 'Promidata_Service_DTO_TenderIndentImporterRelayData',
         'TranslationItem' => 'Promidata_Service_DTO_TranslationItem',
         'UserInformation' => 'Promidata_Service_DTO_UserInformation',
+        'ArticleDynamicDataItem' => 'Promidata_Service_DTO_ArticleDynamicDataItem',
+        'ArticleDynamicLanguageDataItem' => 'Promidata_Service_DTO_ArticleDynamicLanguageDataItem',
+        'OptionItem' => 'Promidata_Service_DTO_OptionItem',
+        'OptionTypeItem' => 'Promidata_Service_DTO_OptionTypeItem',
 
         // Enum
         'ArticleLanguageTypeEnum' => 'Promidata_Service_Enum_ArticleLanguageType',
@@ -104,6 +108,8 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
         'SearchProduct' => 'Promidata_Service_Request_SearchProduct',
         'SearchPurchaseOrder' => 'Promidata_Service_Request_SearchPurchaseOrder',
         'SearchSupplier' => 'Promidata_Service_Request_SearchSupplier',
+        'GetOptionList' => 'Promidata_Service_Request_GetOptionList',
+        'GetOptionTypeList' => 'Promidata_Service_Request_GetOptionTypeList',
 
         // Response
         'ChangePurchaseOrderActionResponse' => 'Promidata_Service_Response_ChangePurchaseOrderAction',
@@ -132,7 +138,9 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
         'SearchCustomerResponse' => 'Promidata_Service_Response_SearchCustomer',
         'SearchProductResponse' => 'Promidata_Service_Response_SearchProduct',
         'SearchPurchaseOrderResponse' => 'Promidata_Service_Response_SearchPurchaseOrder',
-        'SearchSupplierResponse' => 'Promidata_Service_Response_SearchSupplier'
+        'SearchSupplierResponse' => 'Promidata_Service_Response_SearchSupplier',
+        'GetOptionListResponse' => 'Promidata_Service_Response_GetOptionList',
+        'GetOptionTypeListResponse' => 'Promidata_Service_Response_GetOptionTypeList'
     );
 
     /**
@@ -314,5 +322,15 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
     public function GetPurchaseOrderActionList(Promidata_Service_Request_GetPurchaseOrderActionList $parameters)
     {
         return $this->__soapCall('GetPurchaseOrderActionList', array($parameters));
+    }
+
+    public function GetOptionList(Promidata_Service_Request_GetOptionList $parameters)
+    {
+        return $this->__soapCall('GetOptionList', array($parameters));
+    }
+
+    public function GetOptionTypeList(Promidata_Service_Request_GetOptionTypeList $parameters)
+    {
+        return $this->__soapCall('GetOptionTypeList', array($parameters));
     }
 }

@@ -10,6 +10,10 @@
 class Promidata_Service_DTO_ProductConfigurationItem
 {
     /**
+     * @var boolean $AddAsInlineCost
+     */
+    public $AddAsInlineCost = null;
+    /**
      * @var int $CombinationNumber
      */
     public $CombinationNumber = null;
@@ -18,13 +22,25 @@ class Promidata_Service_DTO_ProductConfigurationItem
      */
     public $CombinationType = null;
     /**
+     * @var Promidata_Service_DTO_ProductConfigurationColorItem[] $LinkedColorRestrictions
+     */
+    public $LinkedColorRestrictions = null;
+    /**
      * @var string $LinkedOwnArticleNumber
      */
     public $LinkedOwnArticleNumber = null;
     /**
+     * @var guid $LinkedProductIdentifier
+     */
+    public $LinkedProductIdentifier = null;
+    /**
      * @var string $LinkedPurchaseOrderNumber
      */
     public $LinkedPurchaseOrderNumber = null;
+    /**
+     * @var Promidata_Service_DTO_ProductConfigurationSizeItem[] $LinkedSizeRestrictions
+     */
+    public $LinkedSizeRestrictions = null;
     /**
      * @var string $MainColorKey
      */
@@ -62,6 +78,18 @@ class Promidata_Service_DTO_ProductConfigurationItem
      */
     public $ResultRoundDigits = null;
     /**
+     * @var boolean $SetPrintPositionOnlyPriceToOnInsert
+     */
+    public $SetPrintPositionOnlyPriceToOnInsert = null;
+    /**
+     * @var boolean $SetPrintPositionToOnInsert
+     */
+    public $SetPrintPositionToOnInsert = null;
+    /**
+     * @var boolean $SetPrintPriceSummaryToOnInsert
+     */
+    public $SetPrintPriceSummaryToOnInsert = null;
+    /**
      * @var int $SortNumber
      */
     public $SortNumber = null;
@@ -75,14 +103,18 @@ class Promidata_Service_DTO_ProductConfigurationItem
     public $UseSizesFromArticleCombination = null;
 
     /**
+     * @param boolean $AddAsInlineCost
+     * @param guid $LinkedProductIdentifier
      * @param float $QuantityDenominator
      * @param float $QuantityNumerator
      * @param boolean $RestrictedToColorSizeCombination
      * @param int $ResultRoundDigits
      * @param int $SortNumber
      */
-    public function __construct($QuantityDenominator, $QuantityNumerator, $RestrictedToColorSizeCombination, $ResultRoundDigits, $SortNumber)
+    public function __construct($AddAsInlineCost, $LinkedProductIdentifier, $QuantityDenominator, $QuantityNumerator, $RestrictedToColorSizeCombination, $ResultRoundDigits, $SortNumber)
     {
+        $this->AddAsInlineCost = $AddAsInlineCost;
+        $this->LinkedProductIdentifier = $LinkedProductIdentifier;
         $this->QuantityDenominator = $QuantityDenominator;
         $this->QuantityNumerator = $QuantityNumerator;
         $this->RestrictedToColorSizeCombination = $RestrictedToColorSizeCombination;

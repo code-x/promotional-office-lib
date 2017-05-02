@@ -222,4 +222,18 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @return Promidata_Service_Response_GetPurchaseOrderActionList
      */
     public function GetPurchaseOrderActionList(Promidata_Service_Request_GetPurchaseOrderActionList $parameters);
+
+    /**
+     * @param Promidata_Service_Request_GetOptionList $parameters
+     *
+     * @return Promidata_Service_Response_GetOptionList
+     */
+    public function GetOptionList(Promidata_Service_Request_GetOptionList $parameters);
+
+    /**
+     * @param Promidata_Service_Request_GetOptionTypeList $parameters
+     *
+     * @return Promidata_Service_Response_GetOptionTypeList
+     */
+    public function GetOptionTypeList(Promidata_Service_Request_GetOptionTypeList $parameters);
 }

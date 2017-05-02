@@ -75,6 +75,9 @@ include_once('GetProductConfiguration.php');
 include_once('GetProductConfigurationParameter.php');
 include_once('GetProductConfigurationResponse.php');
 include_once('ProductConfiguration.php');
+include_once('ProductConfigurationItem.php');
+include_once('ProductConfigurationColorItem.php');
+include_once('ProductConfigurationSizeItem.php');
 include_once('SearchPurchaseOrder.php');
 include_once('PurchaseOrderSearchParameter.php');
 include_once('SearchPurchaseOrderResponse.php');
@@ -93,15 +96,22 @@ include_once('ChangePurchaseOrderActionResult.php');
 include_once('GetPurchaseOrderActionList.php');
 include_once('GetPurchaseOrderActionListResponse.php');
 include_once('PurchaseOrderAction.php');
+include_once('GetOptionList.php');
+include_once('GetOptionListResponse.php');
+include_once('GetOptionTypeList.php');
+include_once('GetOptionTypeListResponse.php');
 include_once('ShowDescriptionItem.php');
 include_once('ImportInformation.php');
 include_once('ArticleTextItem.php');
 include_once('ArticleLanguageTypeEnum.php');
 include_once('ArticleTypeEnum.php');
 include_once('ColorSizeCombination.php');
+include_once('ArticleDynamicDataItem.php');
+include_once('ArticleDynamicLanguageDataItem.php');
 include_once('TranslationItem.php');
 include_once('LinkItemV1.php');
-include_once('ProductConfigurationItem.php');
+include_once('OptionItem.php');
+include_once('OptionTypeItem.php');
 include_once('GenderType.php');
 include_once('TenderIndentImporterData.php');
 include_once('TenderIndentImporterAddressData.php');
@@ -191,6 +201,9 @@ class CustomerBackendService extends \SoapClient
         'GetProductConfigurationParameter' => '\GetProductConfigurationParameter',
         'GetProductConfigurationResponse' => '\GetProductConfigurationResponse',
         'ProductConfiguration' => '\ProductConfiguration',
+        'ProductConfigurationItem' => '\ProductConfigurationItem',
+        'ProductConfigurationColorItem' => '\ProductConfigurationColorItem',
+        'ProductConfigurationSizeItem' => '\ProductConfigurationSizeItem',
         'SearchPurchaseOrder' => '\SearchPurchaseOrder',
         'PurchaseOrderSearchParameter' => '\PurchaseOrderSearchParameter',
         'SearchPurchaseOrderResponse' => '\SearchPurchaseOrderResponse',
@@ -209,13 +222,20 @@ class CustomerBackendService extends \SoapClient
         'GetPurchaseOrderActionList' => '\GetPurchaseOrderActionList',
         'GetPurchaseOrderActionListResponse' => '\GetPurchaseOrderActionListResponse',
         'PurchaseOrderAction' => '\PurchaseOrderAction',
+        'GetOptionList' => '\GetOptionList',
+        'GetOptionListResponse' => '\GetOptionListResponse',
+        'GetOptionTypeList' => '\GetOptionTypeList',
+        'GetOptionTypeListResponse' => '\GetOptionTypeListResponse',
         'ShowDescriptionItem' => '\ShowDescriptionItem',
         'ImportInformation' => '\ImportInformation',
         'ArticleTextItem' => '\ArticleTextItem',
         'ColorSizeCombination' => '\ColorSizeCombination',
+        'ArticleDynamicDataItem' => '\ArticleDynamicDataItem',
+        'ArticleDynamicLanguageDataItem' => '\ArticleDynamicLanguageDataItem',
         'TranslationItem' => '\TranslationItem',
         'LinkItemV1' => '\LinkItemV1',
-        'ProductConfigurationItem' => '\ProductConfigurationItem',
+        'OptionItem' => '\OptionItem',
+        'OptionTypeItem' => '\OptionTypeItem',
         'TenderIndentImporterData' => '\TenderIndentImporterData',
         'TenderIndentImporterAddressData' => '\TenderIndentImporterAddressData',
         'TenderIndentImporterPositionData' => '\TenderIndentImporterPositionData',
@@ -506,5 +526,25 @@ class CustomerBackendService extends \SoapClient
     public function GetPurchaseOrderActionList(GetPurchaseOrderActionList $parameters)
     {
         return $this->__soapCall('GetPurchaseOrderActionList', array($parameters));
+    }
+
+    /**
+     * @param GetOptionList $parameters
+     *
+     * @return GetOptionList
+     */
+    public function GetOptionList(GetOptionList $parameters)
+    {
+        return $this->__soapCall('GetOptionList', array($parameters));
+    }
+
+    /**
+     * @param GetOptionTypeList $parameters
+     *
+     * @return GetOptionTypeList
+     */
+    public function GetOptionTypeList(GetOptionTypeList $parameters)
+    {
+        return $this->__soapCall('GetOptionTypeList', array($parameters));
     }
 }

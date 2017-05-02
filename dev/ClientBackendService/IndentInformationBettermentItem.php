@@ -39,6 +39,14 @@ class IndentInformationBettermentItem
      */
     public $IndentConfirmationText = null;
     /**
+     * @var string $Option1IdName
+     */
+    public $Option1IdName = null;
+    /**
+     * @var string $Option2IdName
+     */
+    public $Option2IdName = null;
+    /**
      * @var string $OwnArticleNumber
      */
     public $OwnArticleNumber = null;
